@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Similarity Finder</title>
+</head>
+<body>
+    <h1>Find Similar Dog Image</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*">
+        <input type="submit" value="Upload">
+    </form>
+    {% if uploaded_image %}
+        <h2>Uploaded Image</h2>
+        <img src="{{ url_for('static', filename='uploads/' ~ uploaded_image) }}" width="300">
+        <h2>Most Similar Image</h2>
+        <img src="{{ url_for('static', filename='dog_database/' ~ result_image) }}" width="300">
+        <p>Similarity Score: {{ similarity }}</p>
+    {% endif %}
+</body>
+</html>
