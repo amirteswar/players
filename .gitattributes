@@ -1,0 +1,2 @@
+models/works/resnet_feature_extractor.pth filter=lfs diff=lfs merge=lfs -text
+models/works/dog_similarity_resnet50_triplet.pth filter=lfs diff=lfs merge=lfs -text
